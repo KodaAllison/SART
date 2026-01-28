@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sustained Attention to Response Task (SART)</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div id="app">
+        <!-- Instructions Screen -->
+        <div id="instructions-screen" class="screen active">
+            <div class="content">
+                <h1>Sustained Attention Task</h1>
+                <div class="instructions">
+                    <p>In this task, you will see single digits (1-9) appear on the screen.</p>
+                    <p><strong>Your task:</strong></p>
+                    <ul>
+                        <li>Press the <strong>SPACEBAR</strong> as quickly as possible when you see any digit</li>
+                        <li><strong>EXCEPT</strong> when you see the number <strong>3</strong></li>
+                        <li>When you see <strong>3</strong>, do NOT press any key</li>
+                    </ul>
+                    <p>A fixation dot will appear between digits to help you maintain focus.</p>
+                    <p>Try to respond as quickly and accurately as possible.</p>
+                </div>
+                <button id="start-button" class="btn">Start Task</button>
+            </div>
+        </div>
+
+        <!-- Task Screen -->
+        <div id="task-screen" class="screen">
+            <div id="stimulus-container">
+                <div id="fixation" class="hidden"></div>
+                <div id="digit" class="hidden"></div>
+            </div>
+        </div>
+
+        <!-- Results Screen -->
+        <div id="results-screen" class="screen">
+            <div class="content">
+                <h1>Task Complete</h1>
+                <div class="results">
+                    <div class="result-item">
+                        <div class="result-label">Mean Reaction Time</div>
+                        <div class="result-value" id="mean-rt">--</div>
+                    </div>
+                    <div class="result-item">
+                        <div class="result-label">Go Accuracy</div>
+                        <div class="result-value" id="go-accuracy">--</div>
+                    </div>
+                    <div class="result-item">
+                        <div class="result-label">No-Go Accuracy</div>
+                        <div class="result-value" id="nogo-accuracy">--</div>
+                    </div>
+                    <div class="result-item">
+                        <div class="result-label">Overall Accuracy</div>
+                        <div class="result-value" id="overall-accuracy">--</div>
+                    </div>
+                    <div class="result-details">
+                        <p><strong>Go Trials:</strong> <span id="go-correct">--</span> / <span id="go-total">--</span> correct</p>
+                        <p><strong>No-Go Trials:</strong> <span id="nogo-correct">--</span> / <span id="nogo-total">--</span> correct</p>
+                        <p><strong>Commissions (false alarms):</strong> <span id="commissions">--</span></p>
+                        <p><strong>Omissions (misses):</strong> <span id="omissions">--</span></p>
+                    </div>
+                </div>
+                <div class="button-group">
+                    <button id="download-button" class="btn">Download Data (CSV)</button>
+                    <button id="restart-button" class="btn btn-secondary">Restart Task</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="sart.js"></script>
+</body>
+</html>
