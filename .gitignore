@@ -9,3 +9,6 @@ Thumbs.db
 # Logs
 *.log
 npm-debug.log*
+
+# koder skill credentials must never be committed
+.claude/skills/koder-ticket/.koder.env
